@@ -14,7 +14,7 @@
         The initial schema has the '01' id, so that it is over-written if we re-generate it.
     -->
     <changeSet id="01" author="Bhushan Uniyal">
-        <createTable tableName="ser">
+        <createTable tableName="user">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

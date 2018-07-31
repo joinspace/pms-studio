@@ -11,14 +11,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 
-import static com.joinspace.pmsstudio.application.util.AppConstants.LOG_HEADER;
+import static com.joinspace.pmsstudio.application.util.constant.AppConstants.LOG_HEADER;
 
 /**
  * Properties specific to One.
  * <p>
  * Properties are configured in the application.yml file.
  */
-@Configuration
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 @Getter @Setter @ToString
 @Slf4j
@@ -29,6 +28,7 @@ public class ApplicationProperties {
     private final ApplicationProperties.Metrics metrics = new ApplicationProperties.Metrics();
     private final ApplicationProperties.Logging logging = new ApplicationProperties.Logging();
     private final ApplicationProperties.Security security = new ApplicationProperties.Security();
+    private final ApplicationProperties.Cache cache = new ApplicationProperties.Cache();
 
     private final CorsConfiguration cors = new CorsConfiguration();
 
@@ -46,6 +46,9 @@ public class ApplicationProperties {
 
     @Getter @Setter @ToString
     public static class Metrics {
+
+        private final ApplicationProperties.Metrics.Jmx jmx = new ApplicationProperties.Metrics.Jmx();
+        private final ApplicationProperties.Metrics.Logs logs = new ApplicationProperties.Metrics.Logs();
 
         @Getter @Setter @ToString
         public static class Logs {
@@ -98,18 +101,7 @@ public class ApplicationProperties {
         private final ApplicationProperties.Security.Authentication authentication = new ApplicationProperties.Security.Authentication();
         private final ApplicationProperties.Security.RememberMe rememberMe = new ApplicationProperties.Security.RememberMe();
 
-        public ApplicationProperties.Security.ClientAuthorization getClientAuthorization() {
-            return this.clientAuthorization;
-        }
-
-        public ApplicationProperties.Security.Authentication getAuthentication() {
-            return this.authentication;
-        }
-
-        public ApplicationProperties.Security.RememberMe getRememberMe() {
-            return this.rememberMe;
-        }
-
+        @Getter @Setter @ToString
         public static class RememberMe {
             @NotNull
             private String key;
@@ -118,10 +110,6 @@ public class ApplicationProperties {
         @Getter @Setter @ToString
         public static class Authentication {
             private final ApplicationProperties.Security.Authentication.Jwt jwt = new ApplicationProperties.Security.Authentication.Jwt();
-
-            public ApplicationProperties.Security.Authentication.Jwt getJwt() {
-                return this.jwt;
-            }
 
             @Getter @Setter @ToString
             public static class Jwt {
@@ -150,6 +138,32 @@ public class ApplicationProperties {
             private int timeToLiveSeconds = 3600;
             private long maxEntries = 100L;
 
+        }
+    }
+
+    @Getter @Setter @ToString
+    public static class Cache {
+        private final ApplicationProperties.Cache.Hazelcast hazelcast = new ApplicationProperties.Cache.Hazelcast();
+        private final ApplicationProperties.Cache.Ehcache ehcache = new ApplicationProperties.Cache.Ehcache();
+
+        @Getter @Setter @ToString
+        public static class Ehcache {
+            private int timeToLiveSeconds = 3600;
+            private long maxEntries = 100L;
+        }
+
+        @Getter @Setter @ToString
+        public static class Hazelcast {
+            private int timeToLiveSeconds = 3600;
+            private int backupCount = 1;
+            private final ApplicationProperties.Cache.Hazelcast.ManagementCenter managementCenter = new ApplicationProperties.Cache.Hazelcast.ManagementCenter();
+
+            @Getter @Setter @ToString
+            public static class ManagementCenter {
+                private boolean enabled = false;
+                private int updateInterval = 3;
+                private String url = "";
+            }
         }
     }
 

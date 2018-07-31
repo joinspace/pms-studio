@@ -10,11 +10,12 @@
 		<module>domain</module>
 		<module>application</module>
 		<module>notification</module>
+		<module>repository</module>
 	</modules>
 	<packaging>pom</packaging>
 
 	<name>pms-studio</name>
-	<description>Demo project for Spring Boot</description>
+	<description>PMS-Studio</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -29,6 +30,9 @@
 		<java.version>1.8</java.version>
 		<lombok.version>1.16.16</lombok.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
+<!--
+		<start-class>com.joinspace.pmsstudio.application.PmsStudioApplication</start-class>
+-->
 	</properties>
 
 	<dependencies>
@@ -61,16 +65,67 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.joinspace.pmsstudio.application.PmsStudioApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
+		</pluginManagement>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-sleuth</artifactId>
+				<version>2.0.1.BUILD-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>pms-studio-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>pms-studio-notification</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>pms-studio-repository</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>pms-studio-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>
