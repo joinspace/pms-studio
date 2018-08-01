@@ -1,5 +1,6 @@
 package com.joinspace.pmsstudio.application.config;
 
+import com.joinspace.pmsstudio.common.ApplicationProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

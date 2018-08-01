@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application;
 
-import com.joinspace.pmsstudio.application.util.baseutil.DefaultProfileUtil;
+import com.joinspace.pmsstudio.common.util.baseutil.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

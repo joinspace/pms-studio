@@ -1,4 +1,4 @@
-package com.joinspace.pmsstudio.application.util.constant;
+package com.joinspace.pmsstudio.common.util.constant;
 
 public class AppConstants {
     private AppConstants() {

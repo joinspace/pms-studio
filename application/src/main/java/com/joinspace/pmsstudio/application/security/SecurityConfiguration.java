@@ -2,7 +2,7 @@ package com.joinspace.pmsstudio.application.security;
 
 import com.joinspace.pmsstudio.application.security.jwt.JWTConfigurer;
 import com.joinspace.pmsstudio.application.security.jwt.TokenProvider;
-import com.joinspace.pmsstudio.application.util.constant.AuthoritiesConstants;
+import com.joinspace.pmsstudio.common.util.constant.AuthoritiesConstants;
 import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

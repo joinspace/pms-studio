@@ -11,6 +11,7 @@
 		<module>application</module>
 		<module>notification</module>
 		<module>repository</module>
+		<module>common</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -38,7 +39,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -123,6 +124,11 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>pms-studio-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>pms-studio-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

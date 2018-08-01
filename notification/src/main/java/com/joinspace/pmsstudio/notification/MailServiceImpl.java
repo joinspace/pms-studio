@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.notification;
 
-import com.joinspace.pmsstudio.application.config.ApplicationProperties;
+import com.joinspace.pmsstudio.common.ApplicationProperties;
 import com.joinspace.pmsstudio.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;

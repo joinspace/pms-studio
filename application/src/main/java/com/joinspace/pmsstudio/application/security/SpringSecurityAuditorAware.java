@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application.security;
 
-import com.joinspace.pmsstudio.application.util.constant.AppConstants;
+import com.joinspace.pmsstudio.common.util.constant.AppConstants;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

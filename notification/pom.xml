@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.joinspace.pmsstudio</groupId>
-            <artifactId>pms-studio-application</artifactId>
+            <artifactId>pms-studio-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

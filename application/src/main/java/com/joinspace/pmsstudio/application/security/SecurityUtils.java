@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application.security;
 
-import com.joinspace.pmsstudio.application.util.constant.AuthoritiesConstants;
+import com.joinspace.pmsstudio.common.util.constant.AuthoritiesConstants;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;

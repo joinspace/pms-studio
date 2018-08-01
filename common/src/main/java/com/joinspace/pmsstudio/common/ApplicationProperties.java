@@ -1,17 +1,16 @@
-package com.joinspace.pmsstudio.application.config;
+package com.joinspace.pmsstudio.common;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 
-import static com.joinspace.pmsstudio.application.util.constant.AppConstants.LOG_HEADER;
+import static com.joinspace.pmsstudio.common.util.constant.AppConstants.LOG_HEADER;
 
 /**
  * Properties specific to One.

@@ -1,7 +1,7 @@
 package com.joinspace.pmsstudio.application;
 
-import com.joinspace.pmsstudio.application.config.ApplicationProperties;
-import com.joinspace.pmsstudio.application.util.baseutil.DefaultProfileUtil;
+import com.joinspace.pmsstudio.common.ApplicationProperties;
+import com.joinspace.pmsstudio.common.util.baseutil.DefaultProfileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,9 +17,9 @@ import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static com.joinspace.pmsstudio.application.util.constant.AppConstants.SPRING_PROFILE_CLOUD;
-import static com.joinspace.pmsstudio.application.util.constant.AppConstants.SPRING_PROFILE_DEVELOPMENT;
-import static com.joinspace.pmsstudio.application.util.constant.AppConstants.SPRING_PROFILE_PRODUCTION;
+import static com.joinspace.pmsstudio.common.util.constant.AppConstants.SPRING_PROFILE_CLOUD;
+import static com.joinspace.pmsstudio.common.util.constant.AppConstants.SPRING_PROFILE_DEVELOPMENT;
+import static com.joinspace.pmsstudio.common.util.constant.AppConstants.SPRING_PROFILE_PRODUCTION;
 
 @SpringBootApplication
 @ComponentScan({"com.joinspace.pmsstudio"})

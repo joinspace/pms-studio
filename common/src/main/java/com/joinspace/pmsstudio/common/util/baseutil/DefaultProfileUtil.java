@@ -1,6 +1,6 @@
-package com.joinspace.pmsstudio.application.util.baseutil;
+package com.joinspace.pmsstudio.common.util.baseutil;
 
-import com.joinspace.pmsstudio.application.util.constant.AppConstants;
+import com.joinspace.pmsstudio.common.util.constant.AppConstants;
 import org.springframework.boot.SpringApplication;
 import org.springframework.core.env.Environment;
 

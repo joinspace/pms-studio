@@ -1,10 +1,8 @@
 package com.joinspace.pmsstudio.application.security.jwt;
 
-import com.joinspace.pmsstudio.application.config.ApplicationProperties;
+import com.joinspace.pmsstudio.common.ApplicationProperties;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
