@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application.healper.vm;
 
-import com.joinspace.pmsstudio.service.dto.UserDTO;
+import com.joinspace.pmsstudio.application.healper.dto.UserDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

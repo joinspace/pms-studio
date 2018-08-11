@@ -1,10 +1,12 @@
 package com.joinspace.pmsstudio.application.api;
 
+import com.joinspace.pmsstudio.application.healper.dto.PasswordChangeDTO;
+import com.joinspace.pmsstudio.application.healper.dto.UserDTO;
 import com.joinspace.pmsstudio.application.healper.exception.*;
 import com.joinspace.pmsstudio.application.healper.vm.KeyAndPasswordVM;
 import com.joinspace.pmsstudio.application.security.SecurityUtils;
-import com.joinspace.pmsstudio.service.dto.PasswordChangeDTO;
-import com.joinspace.pmsstudio.service.dto.UserDTO;
+import com.joinspace.pmsstudio.application.service.UserService;
+import com.joinspace.pmsstudio.notification.MailService;
 import com.joinspace.pmsstudio.application.healper.vm.ManagedUserVM;
 import com.joinspace.pmsstudio.domain.User;
 import com.joinspace.pmsstudio.repository.UserRepository;
@@ -108,10 +110,10 @@ public class AccountApi {
     public void saveAccount(@Valid @RequestBody UserDTO userDTO) {
         final String userLogin = SecurityUtils.getCurrentUserLogin().orElseThrow(() -> new InternalServerErrorException("Current user login not found"));
         Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getLogin().equalsIgnoreCase(userLogin))) {
+        if (existingUser.isPresent() && (!existingUser.get().getUsername().equalsIgnoreCase(userLogin))) {
             throw new EmailAlreadyUsedException();
         }
-        Optional<User> user = userRepository.findOneByLogin(userLogin);
+        Optional<User> user = userRepository.findOneByUsername(userLogin);
         if (!user.isPresent()) {
             throw new InternalServerErrorException("User could not be found");
         }

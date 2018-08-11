@@ -17,7 +17,7 @@ import java.util.Locale;
 
 @Service
 @Slf4j
-public class MailServiceImpl {
+public class MailServiceImpl implements MailService {
 
     private static final String USER = "user";
 
