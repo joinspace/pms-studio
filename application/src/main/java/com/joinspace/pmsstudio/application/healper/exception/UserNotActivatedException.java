@@ -1,4 +1,4 @@
-package com.joinspace.pmsstudio.application.util.exception;
+package com.joinspace.pmsstudio.application.healper.exception;
 
 import org.springframework.security.core.AuthenticationException;
 

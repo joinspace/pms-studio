@@ -12,7 +12,7 @@
 		<module>notification</module>
 		<module>repository</module>
 		<module>common</module>
-	</modules>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>pms-studio</name>

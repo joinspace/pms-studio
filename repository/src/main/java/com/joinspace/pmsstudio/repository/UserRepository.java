@@ -18,9 +18,9 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    String USERS_BY_LOGIN_CACHE = "usersByLogin";
+    public String USERS_BY_LOGIN_CACHE = "usersByLogin";
 
-    String USERS_BY_EMAIL_CACHE = "usersByEmail";
+    public String USERS_BY_EMAIL_CACHE = "usersByEmail";
 
     @EntityGraph(attributePaths = "authorities")
     @Cacheable(cacheNames = USERS_BY_LOGIN_CACHE)
@@ -30,7 +30,18 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Cacheable(cacheNames = USERS_BY_EMAIL_CACHE)
     Optional<User> findOneWithAuthoritiesByEmail(String email);
 
-/*
-    Page<User> findAllByLoginNot(Pageable pageable, String login);
-*/
+    Optional<User> findOneByActivationKey(String activationKey);
+
+    List<User> findAllByActivatedIsFalseAndCreatedDateBefore(Instant dateTime);
+
+    Optional<User> findOneByResetKey(String resetKey);
+
+    Optional<User> findOneByEmailIgnoreCase(String email);
+
+    Optional<User> findOneByUsername(String login);
+
+    @EntityGraph(attributePaths = "authorities")
+    Optional<User> findOneWithAuthoritiesById(Long id);
+
+    Page<User> findAllByUsernameNot(Pageable pageable, String login);
 }

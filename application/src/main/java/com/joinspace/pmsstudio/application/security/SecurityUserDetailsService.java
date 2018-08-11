@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application.security;
 
-import com.joinspace.pmsstudio.application.util.exception.UserNotActivatedException;
+import com.joinspace.pmsstudio.application.healper.exception.UserNotActivatedException;
 import com.joinspace.pmsstudio.domain.User;
 import com.joinspace.pmsstudio.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
