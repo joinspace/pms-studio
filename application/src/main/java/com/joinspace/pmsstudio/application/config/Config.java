@@ -2,6 +2,7 @@ package com.joinspace.pmsstudio.application.config;
 
 import com.joinspace.pmsstudio.common.ApplicationProperties;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -10,6 +11,7 @@ import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 @Slf4j
+@EnableCaching
 public class Config {
     @Bean
     public CorsFilter corsFilter(ApplicationProperties applicationProperties) {

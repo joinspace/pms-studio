@@ -1,6 +1,6 @@
 package com.joinspace.pmsstudio.application.healper.exception;
 
-import com.mycompany.myapp.web.rest.util.HeaderUtil;
+import com.joinspace.pmsstudio.application.healper.util.HeaderUtil;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
