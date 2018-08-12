@@ -37,7 +37,7 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PmsStudioApplication.class)
 @Transactional
-public class UserServiceIntTest {
+public class UserServiceTest {
 
     @Autowired
     private UserRepository userRepository;
