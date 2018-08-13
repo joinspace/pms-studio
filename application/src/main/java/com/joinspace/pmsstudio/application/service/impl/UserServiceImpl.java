@@ -1,9 +1,10 @@
-package com.joinspace.pmsstudio.application.service;
+package com.joinspace.pmsstudio.application.service.impl;
 
 import com.joinspace.pmsstudio.application.healper.dto.UserDTO;
 import com.joinspace.pmsstudio.application.healper.exception.InvalidPasswordException;
 import com.joinspace.pmsstudio.application.healper.util.RandomUtil;
 import com.joinspace.pmsstudio.application.security.SecurityUtils;
+import com.joinspace.pmsstudio.application.service.UserService;
 import com.joinspace.pmsstudio.common.util.constant.AppConstants;
 import com.joinspace.pmsstudio.common.util.constant.AuthoritiesConstants;
 import com.joinspace.pmsstudio.domain.Authority;
@@ -30,7 +31,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @Slf4j
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 

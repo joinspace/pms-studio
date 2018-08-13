@@ -5,6 +5,11 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/01_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/02_added_entity_Company.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/03_added_entity_Project.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/04_added_entity_Team.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/05_added_entity_constraints_Project.xml" relativeToChangelogFile="false"/>
+
     <!-- liquibase-add-changelog -  will add liquibase changelogs here -->
     <!-- liquibase-add-constraints-changelog -  will add liquibase constraints changelogs here -->
 </databaseChangeLog>
